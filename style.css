@@ -55,7 +55,7 @@ main {
 .card {
   width: 90%;
   padding: 1.5rem;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   /* border: 1px solid black; */
   transform: translate(-50% 50%);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 10px 22px rgba(0, 0, 0, 0.09),
@@ -65,6 +65,13 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.bg-pattern {
+  position: absolute;
+  top: 1rem;
+  right: 5rem;
+  z-index: -4;
 }
 
 .profile {
@@ -95,12 +102,14 @@ main {
   font-size: 1rem;
   letter-spacing: 0.1rem;
   color: var(--grey-500);
+  color: currentColor;
   font-weight: 400;
 }
 
 .text {
   width: 95%;
   padding: 0.3rem;
+  letter-spacing: 1px;
   /* color: var(--white); */
 
   display: flex;
@@ -122,7 +131,9 @@ main {
 }
 
 .t1 {
+  position: relative;
   background-color: var(--purple-500);
+  z-index: 1;
 }
 
 .t2 {
@@ -138,6 +149,15 @@ main {
   background-color: var(--white);
 }
 
+.t3 .text p:nth-of-type(1) {
+  color: var(--grey-500);
+  font-weight: 500;
+}
+
+.t3 .text p:nth-of-type(2) {
+  color: var(--grey-400);
+}
+
 .t3 .profile-text {
   color: var(--grey-500);
 }
@@ -146,9 +166,23 @@ main {
   background-color: var(--dark-blue);
 }
 
+.t4 .profile-text {
+  color: var(--white);
+}
+
 .t5 {
   background-color: var(--white);
   color: var(--grey-500);
+}
+
+.t5 .text p:nth-of-type(1) {
+  color: var(--grey-500);
+  font-weight: 500;
+}
+
+.t5 .text p:nth-of-type(2) {
+  color: var(--grey-400);
+
 }
 
 .attribution {
@@ -160,7 +194,7 @@ main {
   align-items: center;
 }
 
-@media screen and (min-width: 27rem) {
+@media screen and (min-width: 48rem) {
   .card {
     width: 100%;
     transform: none;
@@ -171,8 +205,8 @@ main {
 
     display: grid;
     place-items: stretch;
-    grid-template-columns: 0.8fr 0.8fr 0.9fr 0.8fr;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
     gap: 1rem;
   }
 
